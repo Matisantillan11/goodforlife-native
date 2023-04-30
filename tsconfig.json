@@ -1,6 +1,43 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noEmit": true,
+    "target": "es6",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "plugins": [{ "transform": "tsconfig-paths" }],
+    "baseUrl": ".",
+    "paths": {
+      "@interfaces/*": ["./src/@interfaces/*"],
+      "@ui/*": ["./src/lib/ui/*"],
+      "@sources/*": ["./src/assets/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@stacks/*": ["./src/navigators/*"],
+      "@theme": ["./src/lib/colors.ts"],
+
+      
+    }
+  },
+  "include": [
+    "./declaration.d.ts",
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  "extends": "expo/tsconfig.base"
 }

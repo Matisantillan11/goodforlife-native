@@ -1,0 +1,16 @@
+{
+  "presets": ["babel-preset-expo"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["."],
+      "alias": {
+        "@ui": "./src/lib/ui",
+        "@theme": ["./src/lib/colors.ts"],
+        "@sources/*": ["./src/assets"],
+        "@screens/*": ["./src/screens/**/*"],
+        "@stacks/*": ["./src/navigators/**/*"],
+        "@interfaces/*": ["./src/@interfaces/**/*"]
+      }
+    }]
+  ]
+}
